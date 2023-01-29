@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.caixaDePreenchimento {
+  margin: 10px;
+  text-align: right;
+  width: 350px;
+}
+
+.button {
+  text-align: right;
+}

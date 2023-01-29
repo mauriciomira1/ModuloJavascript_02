@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="events.css">
+</head>
+<body>
+  <h1>Formulário</h1>
+  <div class="caixaDePreenchimento">
+    <label name="box01" for="onMouseEnter">Entrada do mouse:</label>
+    <input type="text" name="box01" id="onMouseEnter" onmouseenter="onMouseEnter()">
+  </div>
+  <div class="caixaDePreenchimento">
+    <label name="box01" for="onChange">Mudança de valor:</label>
+    <input type="text" name="box01" id="onChange" onchange="">
+  </div>  
+  <div class="caixaDePreenchimento">
+    <label name="box01" for="onFocus">Entrada de foco:</label>
+    <input type="text" name="box01" id="onFocus" onfocus="">
+  </div>  
+  <div class="caixaDePreenchimento">
+    <label name="box01" for="onBlur">Saída de foco:</label>
+    <input type="text" name="box01" id="onBlur" onblur="">
+  </div> 
+  <br>
+  <button type="submit" onclick="onClick()" class="button">Enviar</button>
+
+  <script src="events.js"></script>
+</body>
+</html>
