@@ -48,6 +48,10 @@ article.container {
   border-radius: 2px;
   background-image: linear-gradient(rgb(246, 235, 235), rgb(209, 227, 255));
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 th,
@@ -59,6 +63,17 @@ td {
   width: 200px;
 }
 
+button#botao {
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.item {
+  padding: 4px;
+  margin: 4px;
+}
 
 /* ---------------- FOOTER ---------------- */
 
