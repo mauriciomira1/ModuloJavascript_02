@@ -113,7 +113,6 @@ function sendNew() {
   position.value = ''
   name.value = ''
   number.value = ''
-
 }
 
 function removePlayer () {
