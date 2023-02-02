@@ -79,10 +79,14 @@ p#legend {
   margin: 10px 0 40px 0;
 }
 
+#climbButton:hover {
+  background-color: rgb(201, 201, 201);
+  transition: 0.2s;
+}
+
 #sendButton {
   padding: 10px 14px;
-  background-color: rgb(194, 47, 47);
-  color: white;
+  background-color: rgb(251, 230, 0);
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -91,7 +95,7 @@ p#legend {
 }
 
 #sendButton:hover {
-  background-color: rgb(193, 193, 193);
+  background-color: rgb(221, 195, 61);
   transition: 0.2s;
 }
 

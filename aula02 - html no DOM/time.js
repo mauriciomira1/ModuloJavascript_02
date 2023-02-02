@@ -26,31 +26,41 @@ function addPlayer () {
 
   const liPosition = document.createElement('li')
   liPosition.className = 'position styleNewItem'
+  liPosition.setAttribute('name', 'position')
   liPosition.innerText = 'Posição do Jogador: '
 
   const inputPosition = document.createElement('input')
   inputPosition.type = 'text'
   inputPosition.id = 'position'
+  inputPosition.setAttribute('name', 'position')
+  inputPosition.setAttribute('required','')
 
   const liName = document.createElement('li')
   liName.className = 'name styleNewItem'
   liName.innerText = 'Nome do Jogador: '
+  liName.setAttribute('name', 'name')
 
 
   const inputName = document.createElement('input')
   inputName.type = 'text'
   inputName.id = 'name'
+  inputName.setAttribute('name', 'name')
+  inputName.setAttribute('required','')
 
   const liNumber = document.createElement('li')
   liNumber.className = 'number styleNewItem'
   liNumber.innerText = 'Número da Camisa: '
+  liNumber.setAttribute('name', 'number')
 
   const inputNumber = document.createElement('input')
   inputNumber.type = 'number'
   inputNumber.id = 'number'
+  inputNumber.setAttribute('required','')
+  inputNumber.setAttribute('name', 'number')
 
   const confirmButton = document.createElement('button')
   confirmButton.innerText = 'Escalar'
+  confirm.type = 'submit'
   confirmButton.id = 'climbButton'
   confirmButton.setAttribute('onclick','climbButton()')
 
@@ -94,15 +104,19 @@ function sendNew() {
 
   players.push({'position': position.value, 'name': name.value, 'number': number.value})
   const containerInputs = document.getElementsByClassName('newPlayer')
-  containerInputs = ''
+  containerInputs.className = 'hidden'
+  const textoEnviado = document.createElement('p')
+  textoEnviado.id = 'textoEnviado'
+  textoEnviado.innerText = 'Jogador escalado!'
+  container.appendChild = 'textoEnviado'
 
   position.value = ''
   name.value = ''
   number.value = ''
-  console.log(players)
-  console.log(position)
+
 }
 
 function removePlayer () {
-
+  console.log(players)
+  
 }
