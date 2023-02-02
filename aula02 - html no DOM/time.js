@@ -15,50 +15,92 @@ Construa uma página web que permita montar a escalação de um time de jogadore
 Dica: lembrando que é possível acessar o texto de um input através da propriedade value.
  */
 
+const players = []
+const container = document.querySelector('.container-itens')
+
 function addPlayer () {
-  const container = document.querySelector('.container-itens')
+  
   
   const ul = document.createElement('ul')
   ul.className = 'newPlayer'
 
   const liPosition = document.createElement('li')
-  liPosition.className = 'position'
+  liPosition.className = 'position styleNewItem'
   liPosition.innerText = 'Posição do Jogador: '
-  liPosition.className = 'styleNewItem'
 
   const inputPosition = document.createElement('input')
   inputPosition.type = 'text'
+  inputPosition.id = 'position'
 
   const liName = document.createElement('li')
-  liName.className = 'name'
+  liName.className = 'name styleNewItem'
   liName.innerText = 'Nome do Jogador: '
-  liName.className = 'styleNewItem'
+
 
   const inputName = document.createElement('input')
   inputName.type = 'text'
+  inputName.id = 'name'
 
   const liNumber = document.createElement('li')
-  liNumber.className = 'number'
+  liNumber.className = 'number styleNewItem'
   liNumber.innerText = 'Número da Camisa: '
-  liNumber.className = 'styleNewItem'
 
   const inputNumber = document.createElement('input')
   inputNumber.type = 'number'
+  inputNumber.id = 'number'
 
-  const sendButton = document.createElement('button')
-  sendButton.innerText = 'Escalar'
-  sendButton.id = 'sendButton'
-  sendButton.setAttribute(onclick='sendNew')
-  
+  const confirmButton = document.createElement('button')
+  confirmButton.innerText = 'Escalar'
+  confirmButton.id = 'climbButton'
+  confirmButton.setAttribute('onclick','climbButton()')
+
+
+    
   liPosition.appendChild(inputPosition)
   liName.appendChild(inputName)
   liNumber.appendChild(inputNumber)
-  ul.append(liPosition, liName, liNumber,sendButton)
+  ul.append(liPosition, liName, liNumber,confirmButton)
   container.appendChild(ul)
 }
 
-function sendNew() {
+
+
+function climbButton () {
+  const position = document.getElementById('position')
+  const name = document.getElementById('name')
+  const number = document.getElementById('number')
+  const textNewPlayer = document.createElement('p')
+  const confirmButton = document.getElementById('climbButton')
+  textNewPlayer.innerText = (
+    'Novo Jogador: ' + name.value +
+    '\nPosição: ' + position.value +
+    '\nNúmero: ' + number.value   ) 
+    
+  const sendButton = document.createElement('button')
+  sendButton.innerText = 'Confirmar'
+  sendButton.id = 'sendButton'
+  sendButton.setAttribute('onclick', 'sendNew()')
+
+  confirmButton.className = 'hidden'
+  container.append(textNewPlayer, sendButton)
   
+}
+
+function sendNew() {
+      
+  const position = document.getElementById('position')
+  const name = document.getElementById('name')
+  const number = document.getElementById('number')
+
+  players.push({'position': position.value, 'name': name.value, 'number': number.value})
+  const containerInputs = document.getElementsByClassName('newPlayer')
+  containerInputs = ''
+
+  position.value = ''
+  name.value = ''
+  number.value = ''
+  console.log(players)
+  console.log(position)
 }
 
 function removePlayer () {
