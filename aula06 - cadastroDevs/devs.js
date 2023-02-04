@@ -1,110 +1,61 @@
 
-const registerForm = document.getElementById('registerForm')
 const newTech = document.getElementById('addTechButton')
 const removeButton = document.getElementById('removeButton')
 let i = 0
+const developers = []
 
-const addTechButton = document.getElementById('addTechButton')
-const registerButton = document.getElementById('registerButton')
-const devName = document.getElementById('devName')
 
-/* function newTech () {
-  const newTechItem = document.getElementById('containerItens')
+
+
+function newLabel (innerText, htmlFor) {
   const newTechName = document.createElement('label')
-  newTechName.id = 'newTechName'
-  newTechName.innerText = 'Nome da Tecnologia: '
-  newTechName.name = 'newTechItem'
+  newTechName.innerText = innerText
+  newTechName.htmlFor = htmlFor
+  return newTechName
+}
+
+function newInput (name, id, value, type = 'text') {
   const newTechInput = document.createElement('input')
-  newTechInput.id = 'newTechInput'
-  newTechInput.type = 'text'
-  newTechInput.name = 'newTechItem'
-  newTechItem.append(newTechName, newTechInput)
-} */
-
-
-/* 
-registerForm.addEventListener('addTechButton', (ev) => {
-
-
-})
- */
+  newTechInput.name = name
+  newTechInput.id = id
+  newTechInput.value = value
+  newTechInput.type = type
+  return newTechInput
+}
 
 
 newTech.addEventListener('click', (ev) => {
   let indexI = i
-  indexI++
+  const containerItens = document.getElementById('containerItens')
+  const listItens = document.createElement('div')
+  i++
+  listItens.id = 'listItens-' + indexI
+  listItens.className = 'listItens'
 
-  const newTechItem = document.getElementById('containerItens')
-  const newTechName = document.createElement('label')
-  newTechName.id = 'newTechName' + indexI
-  newTechName.name = 'newTechItem' + indexI
-  newTechName.innerText = '\nNome da Tecnologia: '
-  newTechName.name = 'newTechItem' + indexI
+
+  const newTechIndex = 'newTechItem' + indexI
+  const newTechName = newLabel('Nome: ', newTechIndex)
+  const newInputName = newInput(newTechIndex, newTechIndex, null, 'text')
   
-  const newTechInput = document.createElement('input')
-  newTechInput.id = 'newTechInput' + indexI
-  newTechInput.type = 'text'
-  newTechInput.name = 'newTechItem' + indexI
+  const expTimeTitle = newLabel(' Experiência: ', 'exp' + indexI)
   
-  const expTimeTitle = document.createElement('p')
-  expTimeTitle.innerText = 'Tempo de experiência:'
+  const expTimeInput02 = newInput('exp' + indexI, '02exp' + indexI + '.1', '0-2 anos', 'radio')
+  const expTimeLabel02 = newLabel('0-2 anos', '02exp' + indexI + '.1')
 
-  const expTimeInput02 = document.createElement('input')
-  expTimeInput02.type = 'radio'
-  expTimeInput02.value = '0-2 anos'
-  expTimeInput02.id = '02exp' + indexI
-  expTimeInput02.name = 'exp' + indexI
+  const expTimeInput34 = newInput('exp' + indexI, '34exp' + indexI + '.2', '3-4 anos', 'radio')
+  const expTimeLabel34 = newLabel('3-4 anos', '34exp' + indexI + '.2')
 
-
-
-  const expTimeLabel02 = document.createElement('label')
-  expTimeLabel02.innerText = '0-2 anos'
-  expTimeLabel02.setAttribute('for', '02exp')
-
-  const expTimeInput34 = document.createElement('input')
-  expTimeInput34.type = 'radio'
-  expTimeInput34.value = '3-4 anos'
-  expTimeInput34.id = '34exp' + indexI
-  expTimeInput34.name = 'exp' + indexI
-
-
-
-  const expTimeLabel34 = document.createElement('label')
-  expTimeLabel34.innerText = '3-4 anos'
-  expTimeLabel34.setAttribute('for', '34exp')
-
-  const expTimeInput5plus = document.createElement('input')
-  expTimeInput5plus.type = 'radio'
-  expTimeInput5plus.value = '5+ anos'
-  expTimeInput5plus.id = '5plus' + indexI
-  expTimeInput5plus.name = 'exp' + indexI
-
-
-
-  const expTimeLabel5plus = document.createElement('label')
-  expTimeLabel5plus.innerText = '5+ anos\n'
-  expTimeLabel5plus.setAttribute('for', '5plus')
-
+  const expTimeInput5plus = newInput('exp' + indexI, '5plus' + indexI + '.3', '5+ anos', 'radio')
+  const expTimeLabel5plus = newLabel('5+ anos', '5plus' + indexI + '.3')
+  
   const removeButton = document.createElement('button')
   removeButton.innerText = 'Remover'
   removeButton.id = 'removeButton' + indexI
   removeButton.type = 'button' + indexI
-  removeButton.setAttribute('onclick','removeButtonClick()')
-
-
-
-  const listItens = document.createElement('div')
-  listItens.id = 'listItens' + i
-
-  listItens.append(newTechName, newTechInput, expTimeTitle, expTimeInput02, expTimeLabel02, expTimeInput34, expTimeLabel34, expTimeInput5plus, expTimeLabel5plus, removeButton)
-
-  newTechItem.appendChild(listItens)
-  i++
-
+  removeButton.addEventListener('click', () => {
+    containerItens.removeChild(listItens)
+  })
+  
+  listItens.append(newTechName, newInputName, expTimeTitle, expTimeInput02, expTimeLabel02, expTimeInput34, expTimeLabel34, expTimeInput5plus, expTimeLabel5plus, removeButton)
+  containerItens.appendChild(listItens)
 })
-
-function removeButtonClick(ev) {
-  ev.preventDefault()
-  const buttonRemove = document.getElementById('removeButton' + i)
-  buttonRemove.parentElement[i].style.display = 'none'
-}
