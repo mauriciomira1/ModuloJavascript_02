@@ -2,7 +2,7 @@
 const registerForm = document.getElementById('registerForm')
 const newTech = document.getElementById('addTechButton')
 const removeButton = document.getElementById('removeButton')
-const i = 0
+let i = 0
 
 const addTechButton = document.getElementById('addTechButton')
 const registerButton = document.getElementById('registerButton')
@@ -31,18 +31,20 @@ registerForm.addEventListener('addTechButton', (ev) => {
 
 
 newTech.addEventListener('click', (ev) => {
+  let indexI = i
+  indexI++
 
   const newTechItem = document.getElementById('containerItens')
   const newTechName = document.createElement('label')
-  newTechName.id = 'newTechName' + i
-  newTechName.name = 'newTechItem' + i
+  newTechName.id = 'newTechName' + indexI
+  newTechName.name = 'newTechItem' + indexI
   newTechName.innerText = '\nNome da Tecnologia: '
-  newTechName.name = 'newTechItem' + i
+  newTechName.name = 'newTechItem' + indexI
   
   const newTechInput = document.createElement('input')
-  newTechInput.id = 'newTechInput' + i
+  newTechInput.id = 'newTechInput' + indexI
   newTechInput.type = 'text'
-  newTechInput.name = 'newTechItem' + i
+  newTechInput.name = 'newTechItem' + indexI
   
   const expTimeTitle = document.createElement('p')
   expTimeTitle.innerText = 'Tempo de experiência:'
@@ -50,8 +52,8 @@ newTech.addEventListener('click', (ev) => {
   const expTimeInput02 = document.createElement('input')
   expTimeInput02.type = 'radio'
   expTimeInput02.value = '0-2 anos'
-  expTimeInput02.id = '02exp' + i
-  expTimeInput02.name = 'exp' + i
+  expTimeInput02.id = '02exp' + indexI
+  expTimeInput02.name = 'exp' + indexI
 
 
 
@@ -62,8 +64,8 @@ newTech.addEventListener('click', (ev) => {
   const expTimeInput34 = document.createElement('input')
   expTimeInput34.type = 'radio'
   expTimeInput34.value = '3-4 anos'
-  expTimeInput34.id = '34exp' + i
-  expTimeInput34.name = 'exp' + i
+  expTimeInput34.id = '34exp' + indexI
+  expTimeInput34.name = 'exp' + indexI
 
 
 
@@ -74,8 +76,8 @@ newTech.addEventListener('click', (ev) => {
   const expTimeInput5plus = document.createElement('input')
   expTimeInput5plus.type = 'radio'
   expTimeInput5plus.value = '5+ anos'
-  expTimeInput5plus.id = '5plus' + i
-  expTimeInput5plus.name = 'exp' + i
+  expTimeInput5plus.id = '5plus' + indexI
+  expTimeInput5plus.name = 'exp' + indexI
 
 
 
@@ -85,26 +87,24 @@ newTech.addEventListener('click', (ev) => {
 
   const removeButton = document.createElement('button')
   removeButton.innerText = 'Remover'
-  removeButton.id = 'removeButton' + i
-  removeButton.type = 'button' + i
+  removeButton.id = 'removeButton' + indexI
+  removeButton.type = 'button' + indexI
   removeButton.setAttribute('onclick','removeButtonClick()')
 
 
 
   const listItens = document.createElement('div')
-  listItens.id = 'listItens'
+  listItens.id = 'listItens' + i
 
   listItens.append(newTechName, newTechInput, expTimeTitle, expTimeInput02, expTimeLabel02, expTimeInput34, expTimeLabel34, expTimeInput5plus, expTimeLabel5plus, removeButton)
 
   newTechItem.appendChild(listItens)
-  i = i++
-  alert(i)
-  
-  return i
+  i++
 
 })
 
-function removeButtonClick() {
-  const buttonRemove = document.getElementById('removeButton')
-  buttonRemove.parentElement.style.display = 'none'
+function removeButtonClick(ev) {
+  ev.preventDefault()
+  const buttonRemove = document.getElementById('removeButton' + i)
+  buttonRemove.parentElement[i].style.display = 'none'
 }
