@@ -57,11 +57,11 @@ newTech.addEventListener('click', (ev) => {
   
   listItens.append(newTechName, newInputName, expTimeTitle, expTimeInput02, expTimeLabel02, expTimeInput34, expTimeLabel34, expTimeInput5plus, expTimeLabel5plus, removeButton)
   containerItens.appendChild(listItens)
-<<<<<<< Updated upstream
+
 
 
 })
-
+const registerForm = document.getElementById('registerForm')
 registerForm.addEventListener('submit', function(ev) {
   ev.preventDefault()
   let devName = document.getElementById('devName')
@@ -89,34 +89,24 @@ registerForm.addEventListener('submit', function(ev) {
 
 //CSS functions
 
-function darkTheme {
-
+function darkThemeFunct () {
+  document.body.className = 'is-dark'
 }
 
-function lightTheme {
-
+function lightThemeFunct () {
+  document.body.className = 'is-light'
 }
 
-function changeTheme {
-
-}
-
-const lightTheme = document.getElementById('lightTheme')
-lightTheme.addEventListener('click', lightTheme)
-
-const darkTheme = document.getElementById('darkTheme')
-darkTheme.addEventListener('click', darkTheme)
-
-const changeTheme = document.getElementById('changeTheme')
-changeTheme.addEventListener('click', changeTheme)
-=======
-})
-
-const registerForm = document.getElementById('registerForm')
-registerForm.addEventListener('click', function(ev) {
-  const inputRows = document.querySelectorAll('.listItens')
-
+function changeThemeFunct () {
+  document.body.classList.toggle('is-light')
+  document.body.classList.toggle('is-dark')
   
+  
+}
 
-})
->>>>>>> Stashed changes
+document.getElementById('lightTheme').addEventListener('click', lightThemeFunct)
+
+document.getElementById('darkTheme').addEventListener('click', darkThemeFunct)
+
+document.getElementById('changeTheme').addEventListener('click', changeThemeFunct)
+

@@ -39,3 +39,15 @@
   background-color: rgb(192, 207, 227);
   transition: 0.2s;
 }
+
+.is-light {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+
+.is-dark {
+  color: white;
+  background-color: rgb(48, 48, 48);
+  transition: 0.3s;
+}
