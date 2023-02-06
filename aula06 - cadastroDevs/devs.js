@@ -5,8 +5,6 @@ let i = 0
 const developers = []
 
 
-
-
 function newLabel (innerText, htmlFor) {
   const newTechName = document.createElement('label')
   newTechName.innerText = innerText
@@ -33,12 +31,12 @@ newTech.addEventListener('click', (ev) => {
   listItens.className = 'listItens'
 
 
-  const newTechIndex = 'newTechItem' + indexI
+  const newTechIndex = 'newTechItem'
   const newTechName = newLabel('Nome: ', newTechIndex)
   const newInputName = newInput(newTechIndex, newTechIndex, null, 'text')
   
   const expTimeTitle = newLabel(' Experiência: ', 'exp' + indexI)
-  
+
   const expTimeInput02 = newInput('exp' + indexI, '02exp' + indexI + '.1', '0-2 anos', 'radio')
   const expTimeLabel02 = newLabel('0-2 anos', '02exp' + indexI + '.1')
 
@@ -52,10 +50,61 @@ newTech.addEventListener('click', (ev) => {
   removeButton.innerText = 'Remover'
   removeButton.id = 'removeButton' + indexI
   removeButton.type = 'button' + indexI
+  removeButton.className = 'removeButton'
   removeButton.addEventListener('click', () => {
     containerItens.removeChild(listItens)
   })
   
   listItens.append(newTechName, newInputName, expTimeTitle, expTimeInput02, expTimeLabel02, expTimeInput34, expTimeLabel34, expTimeInput5plus, expTimeLabel5plus, removeButton)
   containerItens.appendChild(listItens)
+
+
 })
+
+registerForm.addEventListener('submit', function(ev) {
+  ev.preventDefault()
+  let devName = document.getElementById('devName')
+  let expTime = document.querySelectorAll('.listItens')
+  let technologies = []
+  
+  expTime.forEach(function (row) {
+    const experienceName = document.querySelector('#' + row.id + ' input[name="newTechItem"]').value
+    const techExp = document.querySelector('#' + row.id + ' input[type="radio"]:checked').value
+    technologies.push({name: experienceName, exp: techExp})
+  })
+  
+  const newDev = {devName: devName.value,  technologies: technologies}
+  developers.push (newDev)
+  alert('Dev cadastrado com sucesso!')
+
+  devName.value = ''
+  expTime.forEach( function (row) {
+    row.remove()
+  })
+
+  console.log(developers)
+})
+
+
+//CSS functions
+
+function darkTheme {
+
+}
+
+function lightTheme {
+
+}
+
+function changeTheme {
+
+}
+
+const lightTheme = document.getElementById('lightTheme')
+lightTheme.addEventListener('click', lightTheme)
+
+const darkTheme = document.getElementById('darkTheme')
+darkTheme.addEventListener('click', darkTheme)
+
+const changeTheme = document.getElementById('changeTheme')
+changeTheme.addEventListener('click', changeTheme)

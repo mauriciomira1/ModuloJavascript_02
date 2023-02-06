@@ -1,6 +1,41 @@
 @charset "UTF-8";
 
-#listItens {
+.listItens {
   background-color: lightgray;
   margin: 15px 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#addTechButton {
+  background-color: lightgray;
+  border-radius: 3px;
+  border: none;
+  padding: 6px 8px;
+}
+
+.removeButton {
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border: none;
+  padding: 6px 8px;
+  margin-left: 10px;
+}
+
+#addTechButton:hover,
+.removeButton:hover {
+  background-color: rgb(152, 178, 214);
+  transition: 0.2s;
+}
+
+#registerButton {
+  background-color: rgb(152, 178, 214);
+  border-radius: 3px;
+  border: none;
+  padding: 10px 16px;
+}
+
+#registerButton:hover {
+  background-color: rgb(192, 207, 227);
+  transition: 0.2s;
 }
