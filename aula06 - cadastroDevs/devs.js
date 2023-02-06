@@ -57,6 +57,7 @@ newTech.addEventListener('click', (ev) => {
   
   listItens.append(newTechName, newInputName, expTimeTitle, expTimeInput02, expTimeLabel02, expTimeInput34, expTimeLabel34, expTimeInput5plus, expTimeLabel5plus, removeButton)
   containerItens.appendChild(listItens)
+<<<<<<< Updated upstream
 
 
 })
@@ -108,3 +109,14 @@ darkTheme.addEventListener('click', darkTheme)
 
 const changeTheme = document.getElementById('changeTheme')
 changeTheme.addEventListener('click', changeTheme)
+=======
+})
+
+const registerForm = document.getElementById('registerForm')
+registerForm.addEventListener('click', function(ev) {
+  const inputRows = document.querySelectorAll('.listItens')
+
+  
+
+})
+>>>>>>> Stashed changes
