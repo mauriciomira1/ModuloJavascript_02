@@ -153,3 +153,10 @@ section {
 .error {
   background-color: rgb(219, 70, 70);
 }
+
+.author {
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 10px;
+  color: rgb(170, 170, 170);
+}

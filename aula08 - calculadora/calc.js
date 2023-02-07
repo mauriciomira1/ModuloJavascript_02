@@ -12,8 +12,6 @@ document.querySelectorAll('.charKey').forEach(function (charKeyBtn) {
   })
 })
 
-
-
 switchBtn.addEventListener('click', function () {
   document.body.classList.toggle('isDark')
   document.body.classList.toggle('isLight')
@@ -24,6 +22,7 @@ document.getElementById('clear').addEventListener('click', function () {
 })
 
 input.addEventListener('keydown', function (ev) {
+  ev.preventDefault()
   if(allowedKeys.includes(ev.key)) {
     input.value += ev.key
     return
