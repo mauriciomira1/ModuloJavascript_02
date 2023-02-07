@@ -22,4 +22,4 @@ document.getElementById('type').classList.remove('typeC')
 
 document.getElementById('data').addEventListener('click', function(){
 
-}99236-4053 neylon
+}
