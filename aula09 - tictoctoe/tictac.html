@@ -6,24 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <script src="tictac.js"></script>
+  <script src="tictac.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;500&family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="game">
     <h1 id="title">TIC TAC TOE</h1>
-    <div class="players-container">
+    <div id="players-container" class="hidden">
       <label for="player1">Player 1:</label>
       <input type="text" id="player1" placeholder="Your Name" class="inputName"><br>
       <label for="player2">Player 2:</label>
       <input type="text" placeholder="Your Name" class="inputName" id="player2" ><br>
-      <button class="btn">Start Game</button>
+      <button id="btnStart">Start Game</button>
     </div>
-    <div class="game-container">
-      <h2>It's time for:</h2>
-      <h2 class="playerTurn"></h2>
+    <div class="" id="game-container">
+      <h3 id="listPlayers">Maurício VS Cissy</h3>
+      <h2 id="turnPlayerName">Maurício</h2>
       <div class="board">
-    
+        <button class="boardOption" id="opt11"></button>
+        <button class="boardOption" id="opt12"></button>
+        <button class="boardOption" id="opt13"></button>
+        <button class="boardOption" id="opt21"></button>
+        <button class="boardOption" id="opt22"></button>
+        <button class="boardOption" id="opt23"></button>
+        <button class="boardOption" id="opt31"></button>
+        <button class="boardOption" id="opt32"></button>
+        <button class="boardOption" id="opt33"></button>
       </div>
     </div>
   </div>
