@@ -16,23 +16,24 @@
       <label for="player1">Player 1:</label>
       <input type="text" id="player1" placeholder="Your Name" class="inputName"><br>
       <label for="player2">Player 2:</label>
-      <input type="text" placeholder="Your Name" class="inputName" id="player2" ><br>
+      <input type="text" placeholder="Your Name" class="inputName" id="player2"><br>
       <button id="btnStart">Start Game</button>
     </div>
     <div class="hidden" id="game-container">
       <h3 id="listPlayers">Maurício VS Cissy</h3>
       <h2 class="turnPlayerName" id="p1"></h2>
       <div class="board">
-        <button class="boardOption" id="opt11"></button>
-        <button class="boardOption" id="opt12"></button>
-        <button class="boardOption" id="opt13"></button>
-        <button class="boardOption" id="opt21"></button>
-        <button class="boardOption" id="opt22"></button>
-        <button class="boardOption" id="opt23"></button>
-        <button class="boardOption" id="opt31"></button>
-        <button class="boardOption" id="opt32"></button>
-        <button class="boardOption" id="opt33"></button>
+        <button class="boardOption" data-region="0.0"></button>
+        <button class="boardOption" data-region="0.1"></button>
+        <button class="boardOption" data-region="0.2"></button>
+        <button class="boardOption" data-region="1.0"></button>
+        <button class="boardOption" data-region="1.1"></button>
+        <button class="boardOption" data-region="1.2"></button>
+        <button class="boardOption" data-region="2.0"></button>
+        <button class="boardOption" data-region="2.1"></button>
+        <button class="boardOption" data-region="2.2"></button>
       </div>
+      <button onclick="restartGame()" id="btnRestart">Restart Game</button>
     </div>
   </div>
 </body>

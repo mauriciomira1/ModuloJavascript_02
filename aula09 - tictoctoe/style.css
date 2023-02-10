@@ -55,7 +55,8 @@ body {
   width: 350px;
 }
 
-#btnStart {
+#btnStart,
+#btnRestart {
   background-color: greenyellow;
   padding: 10px 16px;
   margin-top: 10px;
