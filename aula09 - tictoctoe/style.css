@@ -99,4 +99,5 @@ body {
 
 .boardOption:active {
   background-color: rgb(29, 29, 29);
+  cursor: not-allowed;
 }
