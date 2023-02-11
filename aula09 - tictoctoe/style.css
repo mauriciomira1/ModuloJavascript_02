@@ -55,6 +55,10 @@ body {
   width: 350px;
 }
 
+#win {
+  background-color: rgb(117, 190, 6);
+}
+
 #btnStart,
 #btnRestart {
   background-color: greenyellow;

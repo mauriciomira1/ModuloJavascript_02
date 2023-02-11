@@ -16,7 +16,17 @@ btnStart.addEventListener('click', function () {
   
 })
 
+// Aplica background verde nas regiões marcadas e aparece o nome do jogador vencedor
+function youWin (regions) {
+  regions.forEach(function (region) {
 
+    document.querySelector('[data-region="' + region + '"]').id = 'win'
+  })
+  const playerName = document.querySelector('.inputName').value
+  document.querySelector('.turnPlayerName').innerText = playerName + ' wins!'
+}
+
+// Função principal
 boardOption.forEach(function (opt) {
   opt.addEventListener('click', function () {
     const region = opt.dataset.region
@@ -30,12 +40,12 @@ boardOption.forEach(function (opt) {
 
         let winRegions = getWinRegions()
         if (winRegions.length > 0) {
-          alert('Temos um vencedor!')
+          youWin(winRegions)
         } else if (vBoard.flat().includes('')) {
           turnPlayerName.innerText = "It's " + player2.value + "'s turn"
           turnPlayerName.id = 'p2'
         } else { 
-          alert('EMPATE!!!')
+          turnPlayerName.innerText = 'Vocês empataram'
         }
         
       } else {
@@ -58,12 +68,12 @@ boardOption.forEach(function (opt) {
           
           let winRegions = getWinRegions()
         if (winRegions.length > 0) {
-          alert('Temos um vencedor!')
+          youWin(winRegions)
         } else if (vBoard.flat().includes('')) {
           turnPlayerName.innerText = "It's " + player1.value + "'s turn"
           turnPlayerName.id = 'p1'
         } else { 
-          alert('EMPATE!!!')
+          turnPlayerName.innerText = 'Vocês empataram'
         }
          
         } else {
@@ -82,10 +92,6 @@ boardOption.forEach(function (opt) {
 
   })
 })
-
-/* function winner (ev) {
-
-} */
 
 // Verifica se existem três regiões iguais em sequência e devolve as regiões
 function getWinRegions() {
@@ -109,18 +115,16 @@ function getWinRegions() {
   return winRegions
 }
 
-function handleBoardClick (ev) {
 
-}
-
+// Limpa todos os campos e retorna à pagina com nomes
 function restartGame () {
   document.getElementById('players-container').classList.remove('hidden')
   document.getElementById('game-container').classList = 'hidden'
-  boardOption.forEach(function(){
-    boardOption.innerText = ''
+  document.querySelectorAll('.boardOption').innerText = ''
+  boardOption.forEach(function (element) {
+    element.innerText = ''
+    element.id = ''
   })
-  
-/*   boardOption.innerText = '' */
   player1.value = ''
   player2.value = ''
-}
+} 
