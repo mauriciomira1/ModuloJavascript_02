@@ -25,7 +25,7 @@ body {
   border: 2px solid greenyellow;
   border-radius: 10px;
   width: 600px;
-  height: 700px;
+  height: 800px;
   transition: 0.3s;
   box-shadow: 0px 0px 8px rgba(172, 255, 47, 0.815)
 }

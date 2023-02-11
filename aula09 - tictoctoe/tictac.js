@@ -22,7 +22,7 @@ function youWin (regions) {
 
     document.querySelector('[data-region="' + region + '"]').id = 'win'
   })
-  const playerName = document.querySelector('.inputName').value
+  const playerName = document.querySelector('.inputName').value 
   document.querySelector('.turnPlayerName').innerText = playerName + ' wins!'
 }
 
