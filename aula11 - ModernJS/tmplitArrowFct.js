@@ -1,5 +1,5 @@
-const name = 'Maurício'
-console.log(`Olá ${name}!
+const userName = 'Maurício'
+console.log(`Olá ${userName}!
 Estamos em ${Date()}`)
 
 const calc = (x, y) => x * y
