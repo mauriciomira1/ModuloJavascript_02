@@ -1,3 +1,4 @@
+import charKeyFnct from './charKeyFnct.js'
 import { calculate } from './modCalculate.js'
 import modLightDark from './modLightDark.js'
 
@@ -8,12 +9,7 @@ const copyToClipboard = document.getElementById('copyToClipboard')
 const equalBtn = document.getElementById('equal')
 const allowedKeys = ["(", ")", "/", "*", "-", "+", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", ".", "%", " "]
 
-document.querySelectorAll('.charKey').forEach(function (charKeyBtn) {
-  charKeyBtn.addEventListener('click', function() {
-    const value = charKeyBtn.dataset.value
-    input.value += value
-  })
-})
+document.querySelectorAll('.charKey').forEach(charKeyFnct)
 
 switchBtn.addEventListener('click', modLightDark)
 
