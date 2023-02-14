@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+  --bg-pageColor: rgb(37, 37, 37);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 0.752);
+  --bg-color: rgb(54, 226, 120);
+  --bg-colorActive: rgba(255, 255, 255, 0.714);
+}
+
+.isLight {
+  --bg-pageColor: rgb(255, 255, 255);
+  --text-color: rgb(0, 0, 0);
+  --border-color: rgba(90, 90, 90, 0.752);
+  --bg-color: rgb(35, 152, 80);
+  --bg-colorActive: rgba(226, 226, 226, 0.714);
+}
+
+.isDark {
+  --bg-pageColor: rgb(37, 37, 37);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 0.752);
+  --bg-color: rgb(54, 226, 120);
+  --bg-colorActive: rgba(255, 255, 255, 0.714);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: var(--text-color);
+  background-color: var(--bg-pageColor);
+}
+
+.calc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+}
+
+.calc-header {
+  display: flex;
+  flex-direction: row;
+  flex: 1 0 30px;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 80px;
+  width: 99%;
+}
+
+.switchBtn {
+  background-color: var(--bg-colorActive);
+  padding: 10px 12px;
+  border: none;
+  border-radius: 3px;
+}
+
+.switchBtn:hover {
+  background-color: rgb(220, 220, 220);
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+#input {
+  width: 98.5%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  text-align: end;
+  padding: 8px;
+  font-size: 1.4em;
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 10px;
+}
+
+#keys>button {
+  padding: 15px 40px;
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 3px;
+  font-size: 1.2em;
+}
+
+#keys>button:hover {
+  background-color: rgb(35, 170, 87);
+}
+
+#keys>button:active {
+  background-color: rgb(255, 255, 255);
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98.5%;
+  margin-top: 10px;
+}
+
+#copyToClipboard {
+  width: 60px;
+  border-radius: 4px 0 0 4px;
+  margin: 5px 0;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+}
+
+#copyToClipboard:hover {
+  background-color: rgba(255, 255, 255, 0.167);
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+#copyToClipboard:active {
+  background-color: var(--bg-colorActive);
+}
+
+#copyToClipboard:focus {
+  background-color: green;
+  transition: 0.01s;
+}
+
+#result {
+  min-width: 440px;
+  border-radius: 0 4px 4px 0;
+  margin: 5px 0;
+  height: 50px;
+  /*   border: 2px solid rgba(255, 255, 255, 0.759); */
+  border: 2px solid var(--border-color);
+  border-left: none;
+  color: var(--text-color);
+  cursor: not-allowed;
+  text-align: end;
+  padding-right: 10px;
+  font-size: 1.3em;
+}
+
+.error {
+  background-color: rgb(219, 70, 70);
+}
+
+.author {
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 10px;
+  color: rgb(170, 170, 170);
+}

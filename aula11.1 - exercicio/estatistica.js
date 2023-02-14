@@ -26,3 +26,15 @@ const mediana = (...numMediana) => {
 }
 
 console.log(`A mediana é: ${mediana(1,3,3,4)}`)
+
+const moda = (...numbers) => {
+  // [ [number, qtd], [number, qtd], [number, qtd] ]
+  const quantities = numbers.map(num => [
+    num,
+    numbers.filter(n => num === n).length
+  ])
+  quantities.sort((a, b) => b[1] - a[1])
+  return quantities[0][0]
+}
+
+console.log (`A moda é: ${moda(1,4,4,6,7,8,5,5,7,4,11,10)}`)
