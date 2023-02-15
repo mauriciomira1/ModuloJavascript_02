@@ -1,5 +1,5 @@
 const dayjs = require('dayjs')
-dayjs().format('DD/MM/YYYY')
+
 
 /* const dn = dayjs('06/10/1990')
 const dAtual = dayjs(Date())
@@ -18,8 +18,16 @@ const diasQFaltam = '' */
 function birthday (date) {
   const birthday = dayjs(date)
   const today = dayjs()
-  const birth = today.diff(birthday, 'year')
-  return birth
+  const age = today.diff(birthday, 'year')
+  const nextBday = birthday.add(age + 1, 'year')
+  const showNextBday = nextBday.format('DD/MM/YYYY')
+  const bdayDay = nextBday.diff(today, 'day') + 1
+
+  console.log(`
+  Idade: ${age}
+  Próximo aniversário: ${showNextBday}
+  Quantos dias para o aniversário: ${bdayDay}
+  `)
 }
 
-console.log(birthday(06/10/1990))
+birthday('1990-10-06')
