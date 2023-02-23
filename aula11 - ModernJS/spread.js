@@ -13,4 +13,4 @@ const townsObjClone = { ...townsObj }
 
 townsObjClone.test = 'Test'
 
-console.log({ townsObj, townsObjClone })
+console.log({ townsObj, townsObjClone, townsClone})
