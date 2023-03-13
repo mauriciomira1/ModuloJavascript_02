@@ -1,9 +1,7 @@
-const Component = require("./Component")
+import { Component } from "./Component.js";
 
-class Input extends Component {
-  constructor (classNameElement) {
-    super('input', classNameElement)
+export class Input extends Component {
+  constructor (parent, options) {
+    super('input', parent, options)
   }
 }
-
-module.exports = Input

@@ -1,14 +1,7 @@
-const Component = require("./Component")
+import { Component } from "./Component.js"
 
-class Label extends Component{
-  constructor (textContent, classNameElement) {
-    super('label', classNameElement)
-    this.textContent = textContent
-  }
-  textAdd(textContent, classNameElement) {
-    const elem = document.querySelector('class', classNameElement)
-    elem.innerText = textContent
+export class Label extends Component {
+  constructor (text, parent, options) {
+    super('label', parent, Object.assign({}, options, { textContent: text }))
   }
 }
-
-module.exports = Label
