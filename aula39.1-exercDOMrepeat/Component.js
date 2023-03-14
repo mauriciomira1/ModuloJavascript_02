@@ -12,11 +12,19 @@ export class Component {
     document.querySelector(this.parent)
   }
 
+  getElement() {
+    return this.#element
+  }
+
   build () {
     this.#element = document.createElement(this.tag)
   }
 
   render () {
-
+    if(this.parent instanceof Component) {
+      this.parent.getElement().append(this.#element)
+    } else {
+      document.querySelector(this.parent).append(this.#element)
+      }
   }
 }
