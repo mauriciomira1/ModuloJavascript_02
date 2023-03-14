@@ -7,8 +7,7 @@ export class Form extends Component {
 
   addChildren(...children) {
     children.forEach(child => {
-      
+      this.getElement().appendChild(child.getElement())
     })
   }
-
 }

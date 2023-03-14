@@ -18,6 +18,8 @@ export class Component {
 
   build () {
     this.#element = document.createElement(this.tag)
+    Object.assign(this.#element, this.options)
+    return this
   }
 
   render () {
