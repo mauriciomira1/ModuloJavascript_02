@@ -5,5 +5,9 @@ export class Form extends Component {
     super('form', parent, options)
   }
 
-  addChild
+  addChildren(...children) {
+    children.forEach(child => {
+      this.getElement().appendChild(child.getElement())
+    })
+  }
 }
